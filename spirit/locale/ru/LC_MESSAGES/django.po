@@ -68,11 +68,11 @@ msgstr "Неподдерживаемый формат файла. Поддерж
 
 #: compat/spirit/spirit/forms/comment_flag.py:30
 msgid "This flag already exists"
-msgstr "Такой флаг уже существует"
+msgstr "Жалоба уже существует"
 
 #: compat/spirit/spirit/forms/comment_like.py:28
 msgid "This like already exists"
-msgstr "Этот лайк уже существует"
+msgstr "Вы уже указывали, что вам это нравится"
 
 #: compat/spirit/spirit/forms/search.py:20
 #, python-format
@@ -115,7 +115,7 @@ msgstr ""
 #: compat/spirit/spirit/forms/topic_poll.py:91
 #, python-format
 msgid "Too many selected choices. Limit is %s"
-msgstr ""
+msgstr "Слишком много выбрано. Можно выбрать не более %s"
 
 #: compat/spirit/spirit/forms/topic_poll.py:100
 #, fuzzy
@@ -124,7 +124,7 @@ msgstr "Топик был закрыт"
 
 #: compat/spirit/spirit/forms/topic_private.py:41
 msgid "user1, user2, ..."
-msgstr "пользователь1, пользователь2"
+msgstr "пользователь1, пользователь2, ..."
 
 #: compat/spirit/spirit/forms/topic_private.py:68
 #: compat/spirit/spirit/models/user.py:47
@@ -156,7 +156,7 @@ msgstr ""
 #: compat/spirit/spirit/forms/user.py:56
 #, python-format
 msgid "Current time is: %(date)s %(time)s"
-msgstr ""
+msgstr "Текущее время: %(date)s %(time)s"
 
 #: compat/spirit/spirit/forms/user.py:64
 msgid "Username or Email"
@@ -182,7 +182,7 @@ msgstr "Попробуйте другой email."
 
 #: compat/spirit/spirit/forms/user.py:107
 msgid "The provided email does not exists."
-msgstr ""
+msgstr "Такая почта у нас не зарегистрирована."
 
 #: compat/spirit/spirit/forms/user.py:110
 #, fuzzy
@@ -299,11 +299,11 @@ msgstr "Другое"
 
 #: compat/spirit/spirit/models/comment_flag.py:26
 msgid "comment flag"
-msgstr "флаг комментария"
+msgstr "жалоба"
 
 #: compat/spirit/spirit/models/comment_flag.py:27
 msgid "comments flags"
-msgstr "флаги комментариев"
+msgstr "жалобы на комментарии"
 
 #: compat/spirit/spirit/models/comment_flag.py:42
 msgid "reason"
@@ -315,11 +315,11 @@ msgstr "тело"
 
 #: compat/spirit/spirit/models/comment_flag.py:49
 msgid "flag"
-msgstr "флаг"
+msgstr "жалоба"
 
 #: compat/spirit/spirit/models/comment_flag.py:50
 msgid "flags"
-msgstr "флаги"
+msgstr "жалобы"
 
 #: compat/spirit/spirit/models/comment_history.py:14
 msgid "original comment"
@@ -389,7 +389,7 @@ msgstr "Неопределенный"
 
 #: compat/spirit/spirit/models/topic_notification.py:21
 msgid "Mention"
-msgstr ""
+msgstr "Упоминания"
 
 #: compat/spirit/spirit/models/topic_notification.py:22
 msgid "Comment"
@@ -494,12 +494,14 @@ msgstr "модератор"
 
 #: compat/spirit/spirit/models/user.py:28
 msgid "topic count"
-msgstr ""
+msgstr "количество топиков"
 
 #: compat/spirit/spirit/models/user.py:48
 msgid ""
 "Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
-msgstr "Обязательное. 30 символов или больше. Буквы, цифры и @/./+/-/_ символы"
+msgstr ""
+"Обязательное поле. Не более 30 символов. Допускаются латинские буквы, "
+"цифры и символы: @.+-_ (например, Ivanov, Ivanov_Ivan, Ivan1981)"
 
 #: compat/spirit/spirit/models/user.py:51
 msgid "Enter a valid username."
@@ -519,21 +521,23 @@ msgstr ""
 
 #: compat/spirit/spirit/models/user.py:57
 msgid "staff status"
-msgstr ""
+msgstr "Персонал"
 
 #: compat/spirit/spirit/models/user.py:58
 msgid "Designates whether the user can log into this admin site."
-msgstr ""
+msgstr "Определяет может ли пользователь зайти в администраторский раздел."
 
 #: compat/spirit/spirit/models/user.py:60
 msgid "active"
-msgstr ""
+msgstr "активный"
 
 #: compat/spirit/spirit/models/user.py:61
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
+"Определяет является ли пользователь активным. Снятие этой галочки "
+"равносильно удалению аккаунта (пользователь не сможет пользоваться форумом"
 
 #: compat/spirit/spirit/models/user.py:63
 msgid "date joined"
@@ -549,12 +553,12 @@ msgstr "У вас недостаточно прав для доступа к э�
 
 #: compat/spirit/spirit/templates/404.html:10
 msgid "what you are looking for is gone..."
-msgstr ""
+msgstr "запрашиваемой страницы не существует..."
 
 #: compat/spirit/spirit/templates/spirit/_base.html:56
 #, python-brace-format
 msgid "{user} has mention you on {topic}"
-msgstr ""
+msgstr "{user} отметил вас в топике '{topic}"
 
 #: compat/spirit/spirit/templates/spirit/_base.html:57
 #, python-brace-format
@@ -643,7 +647,7 @@ msgstr "Пользователи"
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:11
 #: compat/spirit/spirit/templates/spirit/admin/index/dashboard.html:43
 msgid "Flags"
-msgstr "Флаги"
+msgstr "Жалобы"
 
 #: compat/spirit/spirit/templates/spirit/admin/category/category_create.html:5
 #: compat/spirit/spirit/templates/spirit/admin/category/category_create.html:9
@@ -690,22 +694,22 @@ msgstr "проверено"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/_tabs.html:4
 msgid "Open"
-msgstr "открытые"
+msgstr "Новые"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/_tabs.html:5
 #: compat/spirit/spirit/templates/spirit/admin/topic/_tabs.html:5
 msgid "Closed"
-msgstr "зыкрытые"
+msgstr "Обработанные"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_closed.html:5
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_closed.html:11
 msgid "Closed flags"
-msgstr "Закрытые флаги"
+msgstr "Обработанные жалобы"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:5
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:14
 msgid "Flag"
-msgstr "Флаг"
+msgstr "Жалоба"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:18
 msgid "Moderated by"
@@ -713,7 +717,7 @@ msgstr "Проверено"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:30
 msgid "Comment flagged"
-msgstr ""
+msgstr "Жалоба на комментарий"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:54
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:51
@@ -722,12 +726,12 @@ msgstr "удалить"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:61
 msgid "Reporters"
-msgstr ""
+msgstr "Кто оставил жалобу"
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_open.html:5
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_open.html:11
 msgid "Open flags"
-msgstr "Открытые флаги"
+msgstr "Открытые отметки"
 
 #: compat/spirit/spirit/templates/spirit/admin/config/config_basic.html:5
 #: compat/spirit/spirit/templates/spirit/admin/config/config_basic.html:11
@@ -850,7 +854,7 @@ msgstr "Предпросмотр"
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:31
 #, python-brace-format
 msgid "uploading {image_name}"
-msgstr ""
+msgstr "идет загрузка, ждите {image_name}"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:34
 msgid "bolded text"
@@ -862,23 +866,23 @@ msgstr "курсивный текст"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:36
 msgid "list item"
-msgstr ""
+msgstr "пункт списка"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:37
 msgid "link text"
-msgstr ""
+msgstr "текст ссылки"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:38
 msgid "link url"
-msgstr ""
+msgstr "ссылка"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:39
 msgid "image text"
-msgstr ""
+msgstr "подпись к картинке"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:40
 msgid "image url"
-msgstr "ссылка на фото"
+msgstr "ссылка на картинку"
 
 #: compat/spirit/spirit/templates/spirit/comment/_form.html:17
 #: compat/spirit/spirit/templates/spirit/comment/comment_publish.html:18
@@ -895,7 +899,7 @@ msgstr "пожаловаться"
 
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:57
 msgid "share"
-msgstr ""
+msgstr "поделиться"
 
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:61
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:143
@@ -940,7 +944,7 @@ msgstr "Опубликовать комметарий"
 
 #: compat/spirit/spirit/templates/spirit/comment/comment_publish.html:9
 msgid "Publishing comment on"
-msgstr ""
+msgstr "Опубликовать комментарий"
 
 #: compat/spirit/spirit/templates/spirit/comment/comment_update.html:5
 #: compat/spirit/spirit/templates/spirit/comment/comment_update.html:9
@@ -970,7 +974,7 @@ msgstr "Лайк"
 #: compat/spirit/spirit/templates/spirit/comment_like/like_create.html:9
 #, python-format
 msgid "Like %(username)s's comment"
-msgstr ""
+msgstr "Нравится комментарий пользователя %(username)s"
 
 #: compat/spirit/spirit/templates/spirit/comment_like/like_delete.html:5
 #: compat/spirit/spirit/templates/spirit/comment_like/like_delete.html:13
@@ -1115,6 +1119,8 @@ msgid ""
 "<a href=\"%(url_profile)s\">%(username)s</a> has commented on <a href="
 "\"%(url_topic)s\">%(topic_title)s</a>"
 msgstr ""
+"<a href=\"%(url_profile)s\">%(username)s</a> прокомментировал <a href="
+"\"%(url_topic)s\">%(topic_title)s</a>"
 
 #: compat/spirit/spirit/templates/spirit/topic_notification/_render_list.html:11
 #, python-format
@@ -1122,6 +1128,8 @@ msgid ""
 "<a href=\"%(url_profile)s\">%(username)s</a> has mention you on <a href="
 "\"%(url_topic)s\">%(topic_title)s</a>"
 msgstr ""
+"<a href=\"%(url_profile)s\">%(username)s</a> отметил вас в <a href="
+"\"%(url_topic)s\">%(topic_title)s</a>"
 
 #: compat/spirit/spirit/templates/spirit/topic_notification/_render_list.html:21
 msgid "There are no notifications, yet"
@@ -1162,7 +1170,7 @@ msgstr "Обновлено"
 
 #: compat/spirit/spirit/templates/spirit/topic_private/_private_invite_form.html:7
 msgid "Invite"
-msgstr ""
+msgstr "Инвайт"
 
 #: compat/spirit/spirit/templates/spirit/topic_private/_top_bar.html:6
 #: compat/spirit/spirit/templates/spirit/topic_private/_top_bar.html:14
@@ -1223,7 +1231,7 @@ msgstr "Присоединиться"
 
 #: compat/spirit/spirit/templates/spirit/topic_private/private_publish.html:5
 msgid "Publish a private topic"
-msgstr "Опубликовать приватный топик"
+msgstr "Опубликовать данный приватный топик"
 
 #: compat/spirit/spirit/templates/spirit/topic_private/private_publish.html:9
 msgid "Publish private topic"
@@ -1232,7 +1240,7 @@ msgstr "Опубликовать приватный топик"
 #: compat/spirit/spirit/templates/spirit/topic_unread/list.html:5
 #: compat/spirit/spirit/templates/spirit/topic_unread/list.html:9
 msgid "Unread topics replies"
-msgstr ""
+msgstr "Непрочтенные комментарии"
 
 #: compat/spirit/spirit/templates/spirit/user/_profile.html:12
 msgid "Joined at"
@@ -1240,7 +1248,7 @@ msgstr "Зарегистрирован"
 
 #: compat/spirit/spirit/templates/spirit/user/_profile.html:16
 msgid "Seen"
-msgstr ""
+msgstr "Посещение"
 
 #: compat/spirit/spirit/templates/spirit/user/_profile.html:22
 #, fuzzy
@@ -1287,7 +1295,7 @@ msgstr "Выслать email активации"
 
 #: compat/spirit/spirit/templates/spirit/user/activation_resend.html:16
 msgid "Resend email"
-msgstr ""
+msgstr "Переслать email"
 
 #: compat/spirit/spirit/templates/spirit/user/email_change_email.html:2
 #, python-format
@@ -1316,7 +1324,7 @@ msgstr "Я забыл свой пароль"
 
 #: compat/spirit/spirit/templates/spirit/user/logout.html:9
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Вы уверены, что хотите выйти?"
 
 #: compat/spirit/spirit/templates/spirit/user/menu.html:7
 msgid "User menu"
@@ -1461,7 +1469,7 @@ msgstr "Сменить аватар"
 
 #: compat/spirit/spirit/templates/spirit/user/profile_update.html:20
 msgid "Go to gravatar.com and use your current email to change it"
-msgstr ""
+msgstr "Перейдите на http://gravatar.com и используйте свой email, чтобы установить аватар"
 
 #: compat/spirit/spirit/templates/spirit/user/register.html:5
 #: compat/spirit/spirit/templates/spirit/user/register.html:22
@@ -1491,7 +1499,7 @@ msgstr "Топик перестал быть закрепленным"
 
 #: compat/spirit/spirit/templatetags/tags/comment.py:35
 msgid "Unknown topic moderation action"
-msgstr ""
+msgstr "Неизвестная операция"
 
 #: compat/spirit/spirit/templatetags/tags/utils/time.py:32
 msgid "now"
@@ -1695,7 +1703,7 @@ msgstr "Категория была изменена!"
 
 #: compat/spirit/spirit/views/admin/comment_flag.py:35
 msgid "The flag has been moderated!"
-msgstr "Флаг был проверен!"
+msgstr "Жалобы была отмодерирована!"
 
 #: compat/spirit/spirit/views/admin/config.py:20
 msgid "Settings updated!"
