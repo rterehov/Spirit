@@ -500,8 +500,7 @@ msgstr "количество топиков"
 msgid ""
 "Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
 msgstr ""
-"Обязательное поле. Не более 30 символов. Допускаются латинские буквы, "
-"цифры и символы: @.+-_ (например, Ivanov, Ivanov_Ivan, Ivan1981)"
+"Не более 30 латинских букв, цифр и символов @.+-_"
 
 #: compat/spirit/spirit/models/user.py:51
 msgid "Enter a valid username."
