@@ -1289,7 +1289,6 @@ msgstr "Спасибо!"
 #: compat/spirit/spirit/templates/spirit/user/activation_resend.html:5
 #: compat/spirit/spirit/templates/spirit/user/activation_resend.html:9
 #: compat/spirit/spirit/templates/spirit/user/login.html:23
-#, fuzzy
 msgid "Resend activation email"
 msgstr "Выслать email активации"
 
@@ -1316,7 +1315,7 @@ msgstr "Вход"
 
 #: compat/spirit/spirit/templates/spirit/user/login.html:21
 msgid "Create an account"
-msgstr "Создание аккаунта"
+msgstr "Зарегистрироваться"
 
 #: compat/spirit/spirit/templates/spirit/user/login.html:22
 msgid "I don't know my password"
