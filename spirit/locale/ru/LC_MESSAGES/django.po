@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-31 22:07+0400\n"
+"POT-Creation-Date: 2014-08-21 18:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruslan Terehov <rterehov@gmail.com>\n"
 "Language-Team: Ruslan Terehov <rterehov@gmail.com>\n"
@@ -15,6 +15,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: compat/spirit/example/local_settings_sample_prod.py:34
+msgid "German"
+msgstr "Немецкий"
+
+#: compat/spirit/example/local_settings_sample_prod.py:35
+msgid "English"
+msgstr "Английский"
+
+#: compat/spirit/example/local_settings_sample_prod.py:36
+msgid "Spanish"
+msgstr "Испанский"
+
+#: compat/spirit/example/local_settings_sample_prod.py:37
+msgid "Swedish"
+msgstr "Шведский"
 
 #: compat/spirit/spirit/forms/admin.py:46
 msgid ""
@@ -24,26 +40,28 @@ msgstr ""
 #: compat/spirit/spirit/forms/admin.py:69
 #, fuzzy
 msgid "site name"
-msgstr "название форума"
+msgstr "Название форума"
 
 #: compat/spirit/spirit/forms/admin.py:70
 #, fuzzy
 msgid "site description"
-msgstr "описание форума"
+msgstr "Описание форума"
 
 #: compat/spirit/spirit/forms/admin.py:71
 msgid "footer snippet"
-msgstr "код для подвала"
+msgstr "Код для футера"
 
 #: compat/spirit/spirit/forms/admin.py:73
 msgid "This gets rendered just before the footer in your template."
-msgstr "Код из этого поля будет отображен непосредственно перед футером вашего темплейта"
+msgstr ""
+"Код из этого поля будет отображен непосредственно перед футером вашего "
+"темплейта"
 
 #: compat/spirit/spirit/forms/comment.py:29
 msgid "Write comment..."
 msgstr "Комментировать..."
 
-#: compat/spirit/spirit/forms/comment.py:78
+#: compat/spirit/spirit/forms/comment.py:85
 #, python-format
 msgid "Unsupported file format. Supported formats are %s."
 msgstr "Неподдерживаемый формат файла. Поддерживаемые форматы: %s"
@@ -85,12 +103,31 @@ msgstr "Уже существует"
 msgid "This notification already exists"
 msgstr "Уведомление уже существует"
 
+#: compat/spirit/spirit/forms/topic_poll.py:24
+msgid "This must be greater than zero"
+msgstr "Введите значение больше нуля"
+
+#: compat/spirit/spirit/forms/topic_poll.py:68
+#: compat/spirit/spirit/forms/topic_poll.py:73
+msgid "Poll choices"
+msgstr ""
+
+#: compat/spirit/spirit/forms/topic_poll.py:91
+#, python-format
+msgid "Too many selected choices. Limit is %s"
+msgstr ""
+
+#: compat/spirit/spirit/forms/topic_poll.py:100
+#, fuzzy
+msgid "This poll is closed"
+msgstr "Топик был закрыт"
+
 #: compat/spirit/spirit/forms/topic_private.py:41
 msgid "user1, user2, ..."
 msgstr "пользователь1, пользователь2"
 
 #: compat/spirit/spirit/forms/topic_private.py:68
-#: compat/spirit/spirit/models/user.py:46
+#: compat/spirit/spirit/models/user.py:47
 msgid "username"
 msgstr "имя пользователя"
 
@@ -104,146 +141,151 @@ msgstr "Пригласить пользователя"
 msgid "%(username)s is already a participant"
 msgstr "%(username)s уже существует"
 
-#: compat/spirit/spirit/forms/user.py:14
+#: compat/spirit/spirit/forms/user.py:16
 msgid "Leave blank"
 msgstr "Оставить пустым"
 
-#: compat/spirit/spirit/forms/user.py:25
+#: compat/spirit/spirit/forms/user.py:27
 msgid "Do not fill this field."
 msgstr "Не заполняйте это поле."
 
-#: compat/spirit/spirit/forms/user.py:38
+#: compat/spirit/spirit/forms/user.py:40
 msgid "The username is taken."
 msgstr ""
 
-#: compat/spirit/spirit/forms/user.py:54
+#: compat/spirit/spirit/forms/user.py:56
+#, python-format
+msgid "Current time is: %(date)s %(time)s"
+msgstr ""
+
+#: compat/spirit/spirit/forms/user.py:64
 msgid "Username or Email"
 msgstr "Имя пользователя или Email"
 
-#: compat/spirit/spirit/forms/user.py:59 compat/spirit/spirit/forms/user.py:89
+#: compat/spirit/spirit/forms/user.py:69 compat/spirit/spirit/forms/user.py:99
 #: compat/spirit/spirit/templates/spirit/user/profile_update.html:12
 msgid "Email"
 msgstr ""
 
-#: compat/spirit/spirit/forms/user.py:60
+#: compat/spirit/spirit/forms/user.py:70
 #: compat/spirit/spirit/templates/spirit/user/profile_update.html:15
 msgid "Password"
 msgstr "Пароль"
 
-#: compat/spirit/spirit/forms/user.py:70
+#: compat/spirit/spirit/forms/user.py:80
 msgid "Your password was entered incorrectly. Please enter it again."
 msgstr "Неверный пароль. Попробуйте еще раз."
 
-#: compat/spirit/spirit/forms/user.py:79
+#: compat/spirit/spirit/forms/user.py:89
 msgid "Try a different email."
 msgstr "Попробуйте другой email."
 
-#: compat/spirit/spirit/forms/user.py:97
+#: compat/spirit/spirit/forms/user.py:107
 msgid "The provided email does not exists."
 msgstr ""
 
-#: compat/spirit/spirit/forms/user.py:100
+#: compat/spirit/spirit/forms/user.py:110
 #, fuzzy
 msgid "This account was activated."
 msgstr "Ваш аккаунт активирован!"
 
-#: compat/spirit/spirit/models/category.py:13
+#: compat/spirit/spirit/models/category.py:14
 msgid "category parent"
 msgstr "родительская категория"
 
-#: compat/spirit/spirit/models/category.py:15
+#: compat/spirit/spirit/models/category.py:16
 #: compat/spirit/spirit/models/topic.py:22
 msgid "title"
 msgstr "заголовок"
 
-#: compat/spirit/spirit/models/category.py:17
+#: compat/spirit/spirit/models/category.py:18
 msgid "description"
 msgstr "описание"
 
-#: compat/spirit/spirit/models/category.py:18
+#: compat/spirit/spirit/models/category.py:19
 #: compat/spirit/spirit/models/topic.py:27
 msgid "closed"
 msgstr "закрытая"
 
-#: compat/spirit/spirit/models/category.py:19
+#: compat/spirit/spirit/models/category.py:20
 msgid "removed"
 msgstr "удалена"
 
-#: compat/spirit/spirit/models/category.py:20
+#: compat/spirit/spirit/models/category.py:21
 msgid "private"
 msgstr "скрытая"
 
-#: compat/spirit/spirit/models/category.py:29
+#: compat/spirit/spirit/models/category.py:30
 #: compat/spirit/spirit/models/topic.py:20
 msgid "category"
 msgstr "категория"
 
-#: compat/spirit/spirit/models/category.py:30
+#: compat/spirit/spirit/models/category.py:31
 msgid "categories"
 msgstr "катетгории"
 
-#: compat/spirit/spirit/models/comment.py:22
-#: compat/spirit/spirit/models/comment.py:36
-#: compat/spirit/spirit/models/comment.py:52
+#: compat/spirit/spirit/models/comment.py:21
+#: compat/spirit/spirit/models/comment.py:35
+#: compat/spirit/spirit/models/comment.py:51
 msgid "comment"
 msgstr "комментарий"
 
-#: compat/spirit/spirit/models/comment.py:23
+#: compat/spirit/spirit/models/comment.py:22
 msgid "topic moved"
 msgstr "топик перемещен"
 
-#: compat/spirit/spirit/models/comment.py:24
+#: compat/spirit/spirit/models/comment.py:23
 msgid "topic closed"
 msgstr "топик закрыт"
 
-#: compat/spirit/spirit/models/comment.py:25
+#: compat/spirit/spirit/models/comment.py:24
 msgid "topic unclosed"
 msgstr "топик открыт"
 
-#: compat/spirit/spirit/models/comment.py:26
+#: compat/spirit/spirit/models/comment.py:25
 msgid "topic pinned"
 msgstr "топик закреплен"
 
-#: compat/spirit/spirit/models/comment.py:27
+#: compat/spirit/spirit/models/comment.py:26
 msgid "topic unpinned"
 msgstr "топик не закреплен"
 
-#: compat/spirit/spirit/models/comment.py:33
-#: compat/spirit/spirit/models/comment_bookmark.py:20
+#: compat/spirit/spirit/models/comment.py:32
+#: compat/spirit/spirit/models/comment_bookmark.py:15
 #: compat/spirit/spirit/models/topic.py:19
 #: compat/spirit/spirit/models/topic_notification.py:28
 #: compat/spirit/spirit/models/topic_unread.py:18
-#: compat/spirit/spirit/models/user.py:92
+#: compat/spirit/spirit/models/user.py:93
 msgid "user"
 msgstr "пользователь"
 
-#: compat/spirit/spirit/models/comment.py:37
+#: compat/spirit/spirit/models/comment.py:36
 #: compat/spirit/spirit/models/comment_history.py:16
 msgid "comment html"
 msgstr ""
 
-#: compat/spirit/spirit/models/comment.py:38
+#: compat/spirit/spirit/models/comment.py:37
 msgid "action"
 msgstr "действие"
 
-#: compat/spirit/spirit/models/comment.py:44
+#: compat/spirit/spirit/models/comment.py:43
 msgid "modified count"
 msgstr "изменено"
 
-#: compat/spirit/spirit/models/comment.py:45
+#: compat/spirit/spirit/models/comment.py:44
 msgid "likes count"
 msgstr "лайков"
 
-#: compat/spirit/spirit/models/comment.py:53
+#: compat/spirit/spirit/models/comment.py:52
 #: compat/spirit/spirit/templates/spirit/user/profile_comments.html:5
 msgid "comments"
 msgstr "комментарии"
 
-#: compat/spirit/spirit/models/comment_bookmark.py:28
+#: compat/spirit/spirit/models/comment_bookmark.py:23
 msgid "comment bookmark"
 msgstr ""
 
-#: compat/spirit/spirit/models/comment_bookmark.py:29
+#: compat/spirit/spirit/models/comment_bookmark.py:24
 msgid "comments bookmarks"
 msgstr ""
 
@@ -292,8 +334,8 @@ msgid "comments history"
 msgstr "история комментариев"
 
 #: compat/spirit/spirit/models/comment_like.py:24
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:53
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:109
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:64
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:142
 msgid "like"
 msgstr "лайк"
 
@@ -319,11 +361,12 @@ msgid "views count"
 msgstr "количство просмотров"
 
 #: compat/spirit/spirit/models/topic.py:31
-#: compat/spirit/spirit/models/user.py:28
+#: compat/spirit/spirit/models/user.py:29
 msgid "comment count"
 msgstr "количество комменариев"
 
 #: compat/spirit/spirit/models/topic.py:38
+#: compat/spirit/spirit/models/topic_poll.py:11
 msgid "topic"
 msgstr "топик"
 
@@ -358,6 +401,55 @@ msgstr ""
 
 #: compat/spirit/spirit/models/topic_notification.py:44
 msgid "topics notification"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:14
+msgid "choice limit"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:19
+#, fuzzy
+msgid "topic poll"
+msgstr "топик перемещен"
+
+#: compat/spirit/spirit/models/topic_poll.py:20
+#, fuzzy
+msgid "topics polls"
+msgstr "топики"
+
+#: compat/spirit/spirit/models/topic_poll.py:31
+msgid "poll"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:33
+#, fuzzy
+msgid "choice description"
+msgstr "описание форума"
+
+#: compat/spirit/spirit/models/topic_poll.py:34
+#, fuzzy
+msgid "vote count"
+msgstr "количство просмотров"
+
+#: compat/spirit/spirit/models/topic_poll.py:38
+#: compat/spirit/spirit/models/topic_poll.py:47
+msgid "poll choice"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:39
+msgid "poll choices"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:48
+msgid "voter"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:55
+msgid "poll vote"
+msgstr ""
+
+#: compat/spirit/spirit/models/topic_poll.py:56
+msgid "poll votes"
 msgstr ""
 
 #: compat/spirit/spirit/models/topic_private.py:24
@@ -400,54 +492,54 @@ msgstr "администратор"
 msgid "moderator status"
 msgstr "модератор"
 
-#: compat/spirit/spirit/models/user.py:27
+#: compat/spirit/spirit/models/user.py:28
 msgid "topic count"
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:47
+#: compat/spirit/spirit/models/user.py:48
 msgid ""
 "Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
 msgstr "Обязательное. 30 символов или больше. Буквы, цифры и @/./+/-/_ символы"
 
-#: compat/spirit/spirit/models/user.py:50
+#: compat/spirit/spirit/models/user.py:51
 msgid "Enter a valid username."
 msgstr "Введите корректное имя пользователя."
 
-#: compat/spirit/spirit/models/user.py:53
+#: compat/spirit/spirit/models/user.py:54
 msgid "first name"
 msgstr "имя"
 
-#: compat/spirit/spirit/models/user.py:54
+#: compat/spirit/spirit/models/user.py:55
 msgid "last name"
 msgstr "фамилия"
 
-#: compat/spirit/spirit/models/user.py:55
+#: compat/spirit/spirit/models/user.py:56
 msgid "email"
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:56
+#: compat/spirit/spirit/models/user.py:57
 msgid "staff status"
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:57
+#: compat/spirit/spirit/models/user.py:58
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:59
+#: compat/spirit/spirit/models/user.py:60
 msgid "active"
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:60
+#: compat/spirit/spirit/models/user.py:61
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: compat/spirit/spirit/models/user.py:62
+#: compat/spirit/spirit/models/user.py:63
 msgid "date joined"
 msgstr "дата регистрации"
 
-#: compat/spirit/spirit/models/user.py:93
+#: compat/spirit/spirit/models/user.py:94
 msgid "users"
 msgstr "пользователи"
 
@@ -459,25 +551,25 @@ msgstr "У вас недостаточно прав для доступа к э�
 msgid "what you are looking for is gone..."
 msgstr ""
 
-#: compat/spirit/spirit/templates/spirit/_base.html:40
+#: compat/spirit/spirit/templates/spirit/_base.html:56
 #, python-brace-format
 msgid "{user} has mention you on {topic}"
 msgstr ""
 
-#: compat/spirit/spirit/templates/spirit/_base.html:41
+#: compat/spirit/spirit/templates/spirit/_base.html:57
 #, python-brace-format
 msgid "{user} has commented on {topic}"
 msgstr "{user} прокомментировал топик {topic}"
 
-#: compat/spirit/spirit/templates/spirit/_base.html:42
+#: compat/spirit/spirit/templates/spirit/_base.html:58
 msgid "Show all"
 msgstr "Показать все"
 
-#: compat/spirit/spirit/templates/spirit/_base.html:43
+#: compat/spirit/spirit/templates/spirit/_base.html:59
 msgid "No new notifications, yet"
 msgstr "Нет новых уведомлений"
 
-#: compat/spirit/spirit/templates/spirit/_base.html:44
+#: compat/spirit/spirit/templates/spirit/_base.html:60
 #: compat/spirit/spirit/templates/spirit/topic_notification/_render_list.html:17
 msgid "unread"
 msgstr ""
@@ -514,6 +606,8 @@ msgid "Admin"
 msgstr "Администратор"
 
 #: compat/spirit/spirit/templates/spirit/_header.html:29
+#: compat/spirit/spirit/templates/spirit/user/logout.html:5
+#: compat/spirit/spirit/templates/spirit/user/logout.html:15
 #: compat/spirit/spirit/templates/spirit/user/menu.html:23
 msgid "Log out"
 msgstr "Выйти"
@@ -578,9 +672,10 @@ msgstr "Создать категорию"
 #: compat/spirit/spirit/templates/spirit/admin/category/category_list.html:29
 #: compat/spirit/spirit/templates/spirit/admin/category/category_list.html:44
 #: compat/spirit/spirit/templates/spirit/admin/user/_user_list.html:11
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:60
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:71
 #: compat/spirit/spirit/templates/spirit/topic/topic_detail.html:30
 #: compat/spirit/spirit/templates/spirit/topic/topic_detail.html:32
+#: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:11
 msgid "edit"
 msgstr "редактировать"
 
@@ -621,7 +716,7 @@ msgid "Comment flagged"
 msgstr ""
 
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:54
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:44
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:51
 msgid "delete"
 msgstr "удалить"
 
@@ -752,69 +847,80 @@ msgstr "Фото"
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:29
-msgid "bolded text"
-msgstr "жирные текст"
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:30
-msgid "italicised text"
-msgstr "курсивный текст"
-
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:31
-msgid "list item"
-msgstr ""
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:32
-msgid "link text"
-msgstr ""
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:33
-msgid "link url"
-msgstr ""
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:34
-msgid "image text"
-msgstr ""
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:35
-msgid "image url"
-msgstr "ссылка на фото"
-
-#: compat/spirit/spirit/templates/spirit/comment/_editor.html:42
 #, python-brace-format
 msgid "uploading {image_name}"
 msgstr ""
 
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:34
+msgid "bolded text"
+msgstr "жирные текст"
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:35
+msgid "italicised text"
+msgstr "курсивный текст"
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:36
+msgid "list item"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:37
+msgid "link text"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:38
+msgid "link url"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:39
+msgid "image text"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/comment/_editor.html:40
+msgid "image url"
+msgstr "ссылка на фото"
+
 #: compat/spirit/spirit/templates/spirit/comment/_form.html:17
 #: compat/spirit/spirit/templates/spirit/comment/comment_publish.html:18
-#: compat/spirit/spirit/templates/spirit/comment/comment_update.html:15
+#: compat/spirit/spirit/templates/spirit/comment/comment_update.html:18
 #: compat/spirit/spirit/templates/spirit/topic/topic_publish.html:34
+#: compat/spirit/spirit/templates/spirit/topic_poll/poll_update.html:20
 #: compat/spirit/spirit/templates/spirit/topic_private/private_publish.html:23
 msgid "Publish"
 msgstr "Опубликовать"
 
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:47
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:54
 msgid "report"
 msgstr "пожаловаться"
 
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:50
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:110
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:57
+msgid "share"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:61
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:143
 msgid "remove like"
 msgstr "удалить лайк"
 
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:64
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:75
 msgid "quote"
 msgstr "цитировать"
 
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:65
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:76
 msgid "reply"
 msgstr "ответить"
 
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:83
+#: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:16
+#, fuzzy
+msgid "close"
+msgstr "закрытая"
+
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:114
 msgid "This comment was deleted"
 msgstr "Этот комментарий был удален"
 
-#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:90
+#: compat/spirit/spirit/templates/spirit/comment/_render_list.html:122
 msgid "undelete"
 msgstr "восстановить"
 
@@ -1040,6 +1146,20 @@ msgstr "Нет новых уведомлений"
 msgid "Next"
 msgstr "Далее"
 
+#: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:10
+msgid "Vote"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:14
+msgid "open"
+msgstr ""
+
+#: compat/spirit/spirit/templates/spirit/topic_poll/poll_update.html:5
+#: compat/spirit/spirit/templates/spirit/topic_poll/poll_update.html:9
+#, fuzzy
+msgid "Update poll"
+msgstr "Обновлено"
+
 #: compat/spirit/spirit/templates/spirit/topic_private/_private_invite_form.html:7
 msgid "Invite"
 msgstr ""
@@ -1137,7 +1257,7 @@ msgstr "Настройки"
 msgid "Private Message"
 msgstr "Личное сообщение"
 
-#: compat/spirit/spirit/templates/spirit/user/_render_comments_list.html:29
+#: compat/spirit/spirit/templates/spirit/user/_render_comments_list.html:36
 msgid "There are no comments here, yet"
 msgstr "Пока нет комментариев"
 
@@ -1193,6 +1313,10 @@ msgstr "Создание аккаунта"
 #: compat/spirit/spirit/templates/spirit/user/login.html:22
 msgid "I don't know my password"
 msgstr "Я забыл свой пароль"
+
+#: compat/spirit/spirit/templates/spirit/user/logout.html:9
+msgid "Are you sure you want to log out?"
+msgstr ""
 
 #: compat/spirit/spirit/templates/spirit/user/menu.html:7
 msgid "User menu"
@@ -1262,7 +1386,7 @@ msgstr ""
 "писем происходит достаточно быстро."
 
 #: compat/spirit/spirit/templates/spirit/user/password_reset_done.html:12
-#: compat/spirit/spirit/views/user.py:95
+#: compat/spirit/spirit/views/user.py:107
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
@@ -1304,8 +1428,8 @@ msgstr "Пароль изменен для %(site_name)s"
 
 #: compat/spirit/spirit/templates/spirit/user/profile_email_change.html:5
 #: compat/spirit/spirit/templates/spirit/user/profile_email_change.html:9
-#: compat/spirit/spirit/tests/tests_user.py:448
-#: compat/spirit/spirit/tests/tests_utils.py:537
+#: compat/spirit/spirit/tests/tests_user.py:450
+#: compat/spirit/spirit/tests/tests_utils.py:559
 #: compat/spirit/spirit/utils/user/email.py:48
 msgid "Email change"
 msgstr "Изменение email"
@@ -1345,27 +1469,27 @@ msgstr ""
 msgid "Register"
 msgstr "Зарегистрироваться"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:24
+#: compat/spirit/spirit/templatetags/tags/comment.py:25
 msgid "This topic has been moved"
 msgstr "Топик был перемещен"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:26
+#: compat/spirit/spirit/templatetags/tags/comment.py:27
 msgid "This topic has been closed"
 msgstr "Топик был закрыт"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:28
+#: compat/spirit/spirit/templatetags/tags/comment.py:29
 msgid "This topic has been unclosed"
 msgstr "Топик перестал быть закрытым"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:30
+#: compat/spirit/spirit/templatetags/tags/comment.py:31
 msgid "This topic has been pinned"
 msgstr "Топик закреплен"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:32
+#: compat/spirit/spirit/templatetags/tags/comment.py:33
 msgid "This topic has been unpinned"
 msgstr "Топик перестал быть закрепленным"
 
-#: compat/spirit/spirit/templatetags/tags/comment.py:34
+#: compat/spirit/spirit/templatetags/tags/comment.py:35
 msgid "Unknown topic moderation action"
 msgstr ""
 
@@ -1389,8 +1513,8 @@ msgid "%(count)sh"
 msgstr ""
 
 #: compat/spirit/spirit/tests/tests_user.py:95
-#: compat/spirit/spirit/tests/tests_user.py:467
-#: compat/spirit/spirit/tests/tests_utils.py:501
+#: compat/spirit/spirit/tests/tests_user.py:469
+#: compat/spirit/spirit/tests/tests_utils.py:523
 #: compat/spirit/spirit/utils/user/email.py:40
 msgid "User activation"
 msgstr "Активация пользователя"
@@ -1408,90 +1532,126 @@ msgid "(GMT -10:00) Hawaii"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:10
-msgid "(GMT -9:00) Alaska"
+msgid "(GMT -9:30) Marquesas Islands"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:11
-msgid "(GMT -8:00) Pacific Time (US & Canada)"
+msgid "(GMT -9:00) Alaska"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:12
-msgid "(GMT -7:00) Mountain Time (US & Canada)"
+msgid "(GMT -8:00) Pacific Time (US & Canada)"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:13
-msgid "(GMT -6:00) Central Time (US & Canada), Mexico City"
+msgid "(GMT -7:00) Mountain Time (US & Canada)"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:14
-msgid "(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima"
+msgid "(GMT -6:00) Central Time (US & Canada), Mexico City"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:15
-msgid "(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz"
+msgid "(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:16
-msgid "(GMT -3:00) Brazil, Buenos Aires, Georgetown"
+msgid "(GMT -4:30) Venezuela"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:17
-msgid "(GMT -2:00) Mid-Atlantic"
+msgid "(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:18
-msgid "(GMT -1:00) Azores, Cape Verde Islands"
+msgid "(GMT -3:00) Brazil, Buenos Aires, Georgetown"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:19
-msgid "(GMT) Western Europe Time, London, Lisbon, Casablanca"
+msgid "(GMT -2:00) Mid-Atlantic"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:20
-msgid "(GMT +1:00) Brussels, Copenhagen, Madrid, Paris"
+msgid "(GMT -1:00) Azores, Cape Verde Islands"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:21
-msgid "(GMT +2:00) Kaliningrad, South Africa"
+msgid "(GMT) Western Europe Time, London, Lisbon, Casablanca"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:22
-msgid "(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg"
+msgid "(GMT +1:00) Brussels, Copenhagen, Madrid, Paris"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:23
-msgid "(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi"
+msgid "(GMT +2:00) Kaliningrad, South Africa"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:24
-msgid "(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent"
+msgid "(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:25
-msgid "(GMT +6:00) Almaty, Dhaka, Colombo"
+msgid "(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:26
-msgid "(GMT +7:00) Bangkok, Hanoi, Jakarta"
+msgid "(GMT +4:30) Afghanistan"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:27
-msgid "(GMT +8:00) Beijing, Perth, Singapore, Hong Kong"
+msgid "(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:28
-msgid "(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+msgid "(GMT +5:30) India, Sri Lanka"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:29
-msgid "(GMT +10:00) Eastern Australia, Guam, Vladivostok"
+msgid "(GMT +5:45) Nepal"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:30
-msgid "(GMT +11:00) Magadan, Solomon Islands, New Caledonia"
+msgid "(GMT +6:00) Almaty, Dhaka, Colombo"
 msgstr ""
 
 #: compat/spirit/spirit/utils/timezone.py:31
+msgid "(GMT +6:30) Cocos Islands, Myanmar"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:32
+msgid "(GMT +7:00) Bangkok, Hanoi, Jakarta"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:33
+msgid "(GMT +8:00) Beijing, Perth, Singapore, Hong Kong"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:34
+msgid "(GMT +8:45) Australia (Eucla)"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:35
+msgid "(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:36
+msgid "(GMT +9:30) Australia (Northern Territory)"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:37
+msgid "(GMT +10:00) Eastern Australia, Guam, Vladivostok"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:38
+msgid "(GMT +11:00) Magadan, Solomon Islands, New Caledonia"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:39
+msgid "(GMT +11:30) Norfolk Island"
+msgstr ""
+
+#: compat/spirit/spirit/utils/timezone.py:40
 msgid "(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka"
 msgstr ""
 
@@ -1505,27 +1665,27 @@ msgstr "Нельзя отправлять сообщения слишком ча
 msgid "New notification: %(topic_name)s"
 msgstr "Новые уведомления: %(topic_name)s"
 
-#: compat/spirit/spirit/views/user.py:57
+#: compat/spirit/spirit/views/user.py:69
 msgid "We have sent you an email so you can activate your account!"
 msgstr "Мы отправили вам письмо активации! Проверьте почту!"
 
-#: compat/spirit/spirit/views/user.py:78
+#: compat/spirit/spirit/views/user.py:90
 msgid "Your account has been activated!"
 msgstr "Ваш аккаунт активирован!"
 
-#: compat/spirit/spirit/views/user.py:111
+#: compat/spirit/spirit/views/user.py:123
 msgid "Your profile has been updated!"
 msgstr "Ваш профиль изменен!"
 
-#: compat/spirit/spirit/views/user.py:126
+#: compat/spirit/spirit/views/user.py:138
 msgid "Your password has been changed!"
 msgstr "Ваш пароль изменен!"
 
-#: compat/spirit/spirit/views/user.py:141
+#: compat/spirit/spirit/views/user.py:153
 msgid "We have sent you an email so you can confirm the change!"
 msgstr "Мы отправили вам email, чтобы вы могли подтвердить изменения!"
 
-#: compat/spirit/spirit/views/user.py:157
+#: compat/spirit/spirit/views/user.py:169
 msgid "Your email has been changed!"
 msgstr "Ваш email был изменен!"
 
