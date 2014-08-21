@@ -526,8 +526,8 @@ msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
-"Определяет является ли пользователь активным. Снятие этой галочки "
-"равносильно удалению аккаунта (пользователь не сможет пользоваться форумом"
+"Поставте, если пользователь должен считаться активным. "
+"Уберите отметку вместо удаления учетной записи."
 
 #: compat/spirit/spirit/models/user.py:63
 msgid "date joined"
@@ -597,7 +597,7 @@ msgstr "Приватные топики"
 #: compat/spirit/spirit/templates/spirit/admin/comment_flag/flag_detail.html:10
 #: compat/spirit/spirit/templates/spirit/user/menu.html:20
 msgid "Admin"
-msgstr "Администратор"
+msgstr "Администрирование"
 
 #: compat/spirit/spirit/templates/spirit/_header.html:29
 #: compat/spirit/spirit/templates/spirit/user/logout.html:5
