@@ -858,7 +858,7 @@ msgstr "идет загрузка, ждите {image_name}"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:34
 msgid "bolded text"
-msgstr "жирные текст"
+msgstr "жирный текст"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:35
 msgid "italicised text"
