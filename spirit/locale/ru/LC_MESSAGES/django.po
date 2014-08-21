@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-21 18:34+0000\n"
+"POT-Creation-Date: 2014-08-21 19:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruslan Terehov <rterehov@gmail.com>\n"
 "Language-Team: Ruslan Terehov <rterehov@gmail.com>\n"
@@ -38,12 +38,10 @@ msgid ""
 msgstr ""
 
 #: compat/spirit/spirit/forms/admin.py:69
-#, fuzzy
 msgid "site name"
 msgstr "Название форума"
 
 #: compat/spirit/spirit/forms/admin.py:70
-#, fuzzy
 msgid "site description"
 msgstr "Описание форума"
 
@@ -118,7 +116,6 @@ msgid "Too many selected choices. Limit is %s"
 msgstr "Слишком много выбрано. Можно выбрать не более %s"
 
 #: compat/spirit/spirit/forms/topic_poll.py:100
-#, fuzzy
 msgid "This poll is closed"
 msgstr "Топик был закрыт"
 
@@ -185,7 +182,6 @@ msgid "The provided email does not exists."
 msgstr "Такая почта у нас не зарегистрирована."
 
 #: compat/spirit/spirit/forms/user.py:110
-#, fuzzy
 msgid "This account was activated."
 msgstr "Ваш аккаунт активирован!"
 
@@ -408,12 +404,10 @@ msgid "choice limit"
 msgstr ""
 
 #: compat/spirit/spirit/models/topic_poll.py:19
-#, fuzzy
 msgid "topic poll"
 msgstr "топик перемещен"
 
 #: compat/spirit/spirit/models/topic_poll.py:20
-#, fuzzy
 msgid "topics polls"
 msgstr "топики"
 
@@ -422,12 +416,10 @@ msgid "poll"
 msgstr ""
 
 #: compat/spirit/spirit/models/topic_poll.py:33
-#, fuzzy
 msgid "choice description"
 msgstr "описание форума"
 
 #: compat/spirit/spirit/models/topic_poll.py:34
-#, fuzzy
 msgid "vote count"
 msgstr "количство просмотров"
 
@@ -499,8 +491,7 @@ msgstr "количество топиков"
 #: compat/spirit/spirit/models/user.py:48
 msgid ""
 "Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
-msgstr ""
-"Не более 30 латинских букв, цифр и символов @.+-_"
+msgstr "Не более 30 латинских букв, цифр и символов @.+-_"
 
 #: compat/spirit/spirit/models/user.py:51
 msgid "Enter a valid username."
@@ -915,7 +906,6 @@ msgstr "ответить"
 
 #: compat/spirit/spirit/templates/spirit/comment/_render_list.html:83
 #: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:16
-#, fuzzy
 msgid "close"
 msgstr "закрытая"
 
@@ -1077,7 +1067,6 @@ msgid "Move"
 msgstr "Переместить"
 
 #: compat/spirit/spirit/templates/spirit/topic/topic_detail.html:87
-#, fuzzy
 msgid "Reply"
 msgstr "ответить"
 
@@ -1163,7 +1152,6 @@ msgstr ""
 
 #: compat/spirit/spirit/templates/spirit/topic_poll/poll_update.html:5
 #: compat/spirit/spirit/templates/spirit/topic_poll/poll_update.html:9
-#, fuzzy
 msgid "Update poll"
 msgstr "Обновлено"
 
@@ -1173,7 +1161,6 @@ msgstr "Инвайт"
 
 #: compat/spirit/spirit/templates/spirit/topic_private/_top_bar.html:6
 #: compat/spirit/spirit/templates/spirit/topic_private/_top_bar.html:14
-#, fuzzy
 msgid "Participating in"
 msgstr "Участники"
 
@@ -1250,7 +1237,6 @@ msgid "Seen"
 msgstr "Посещение"
 
 #: compat/spirit/spirit/templates/spirit/user/_profile.html:22
-#, fuzzy
 msgid "Last IP"
 msgstr "Последний IP"
 
@@ -1467,7 +1453,9 @@ msgstr "Сменить аватар"
 
 #: compat/spirit/spirit/templates/spirit/user/profile_update.html:20
 msgid "Go to gravatar.com and use your current email to change it"
-msgstr "Перейдите на http://gravatar.com и используйте свой email, чтобы установить аватар"
+msgstr ""
+"Перейдите на http://gravatar.com и используйте свой email, чтобы установить "
+"аватар"
 
 #: compat/spirit/spirit/templates/spirit/user/register.html:5
 #: compat/spirit/spirit/templates/spirit/user/register.html:22
