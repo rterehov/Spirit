@@ -67,7 +67,12 @@ class ActiveUserMiddleware(object):
             return
 
         if not request.user.is_active:
-           logout(request)
+            logout(request)
+
+        if settings.ST_APPROVE_NEW_USERS \
+            and not request.user.is_verified \
+            and not request.user.is_superuser:
+                logout(request)
 
 
 class PrivateForumMiddleware(object):

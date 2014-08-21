@@ -10,4 +10,5 @@ urlpatterns = patterns("spirit.views.admin.user",
     url(r'^admins/$', 'user_admins', name='admin-user-admins'),
     url(r'^mods/$', 'user_mods', name='admin-user-mods'),
     url(r'^unactive/$', 'user_unactive', name='admin-user-unactive'),
+    url(r'^unverified/$', 'user_unverified', name='admin-user-unverified'),
 )
