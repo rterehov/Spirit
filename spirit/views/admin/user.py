@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
 
+from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model
 from django.contrib import messages
@@ -30,25 +31,36 @@ def user_edit(request, user_id):
     return render(request, 'spirit/admin/user/user_edit.html', {'form': form, })
 
 
+def get_users_context(users):
+    return {
+        'users': users,
+        'show_verified_tab': settings.ST_APPROVE_NEW_USERS,
+    }
+
 @administrator_required
 def user_list(request):
     users = User.objects.all()
-    return render(request, 'spirit/admin/user/user_list.html', {'users': users, })
+    return render(request, 'spirit/admin/user/user_list.html', get_users_context(users))
 
 
 @administrator_required
 def user_admins(request):
     users = User.objects.filter(is_administrator=True)
-    return render(request, 'spirit/admin/user/user_admins.html', {'users': users, })
+    return render(request, 'spirit/admin/user/user_admins.html', get_users_context(users))
 
 
 @administrator_required
 def user_mods(request):
     users = User.objects.filter(is_moderator=True, is_administrator=False)
-    return render(request, 'spirit/admin/user/user_mods.html', {'users': users, })
+    return render(request, 'spirit/admin/user/user_mods.html', get_users_context(users))
 
 
 @administrator_required
 def user_unactive(request):
     users = User.objects.filter(is_active=False)
-    return render(request, 'spirit/admin/user/user_unactive.html', {'users': users, })
+    return render(request, 'spirit/admin/user/user_unactive.html', get_users_context(users))
+
+@administrator_required
+def user_unverified(request):
+    users = User.objects.filter(is_verified=False)
+    return render(request, 'spirit/admin/user/user_unverified.html', get_users_context(users))

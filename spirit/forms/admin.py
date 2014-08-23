@@ -18,7 +18,8 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("username", "email", "location",
-                  "timezone", "is_administrator", "is_moderator", "is_active")
+                  "timezone", "is_administrator", "is_moderator", "is_active",
+                  "is_verified")
 
 
 class CategoryForm(forms.ModelForm):
