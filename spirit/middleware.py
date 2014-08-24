@@ -8,6 +8,8 @@ from django.conf import settings
 from django.contrib.auth import logout
 from django.core.urlresolvers import resolve
 from django.contrib.auth.views import redirect_to_login
+from django.contrib import messages
+from django.utils.translation import ugettext as _
 
 
 User = get_user_model()
@@ -72,6 +74,7 @@ class ActiveUserMiddleware(object):
         if settings.ST_APPROVE_NEW_USERS \
             and not request.user.is_verified \
             and not request.user.is_superuser:
+                messages.error(request, _(u"Administrator does not verified you account yet. Please wait!"))
                 logout(request)
 
 
