@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-21 19:24+0000\n"
+"POT-Creation-Date: 2014-08-24 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruslan Terehov <rterehov@gmail.com>\n"
 "Language-Team: Ruslan Terehov <rterehov@gmail.com>\n"
@@ -32,24 +32,28 @@ msgstr "Испанский"
 msgid "Swedish"
 msgstr "Шведский"
 
-#: compat/spirit/spirit/forms/admin.py:46
+#: compat/spirit/spirit/middleware.py:77
+msgid "Administrator does not verified you account yet. Please wait!"
+msgstr "Дождитесь проверки вашего аккаунта администратором!"
+
+#: compat/spirit/spirit/forms/admin.py:47
 msgid ""
 "The category you are updating can not have a parent since it has childrens"
 msgstr ""
 
-#: compat/spirit/spirit/forms/admin.py:69
+#: compat/spirit/spirit/forms/admin.py:70
 msgid "site name"
 msgstr "Название форума"
 
-#: compat/spirit/spirit/forms/admin.py:70
+#: compat/spirit/spirit/forms/admin.py:71
 msgid "site description"
 msgstr "Описание форума"
 
-#: compat/spirit/spirit/forms/admin.py:71
+#: compat/spirit/spirit/forms/admin.py:72
 msgid "footer snippet"
 msgstr "Код для футера"
 
-#: compat/spirit/spirit/forms/admin.py:73
+#: compat/spirit/spirit/forms/admin.py:74
 msgid "This gets rendered just before the footer in your template."
 msgstr ""
 "Код из этого поля будет отображен непосредственно перед футером вашего "
@@ -484,6 +488,10 @@ msgstr "администратор"
 msgid "moderator status"
 msgstr "модератор"
 
+#: compat/spirit/spirit/models/user.py:26
+msgid "verified"
+msgstr "проверенный"
+
 #: compat/spirit/spirit/models/user.py:28
 msgid "topic count"
 msgstr "количество топиков"
@@ -526,8 +534,8 @@ msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
-"Поставте, если пользователь должен считаться активным. "
-"Уберите отметку вместо удаления учетной записи."
+"Поставте, если пользователь должен считаться активным. Уберите отметку "
+"вместо удаления учетной записи."
 
 #: compat/spirit/spirit/models/user.py:63
 msgid "date joined"
@@ -805,6 +813,10 @@ msgstr "Модераторы"
 msgid "Unactive"
 msgstr "Неактивные"
 
+#: compat/spirit/spirit/templates/spirit/admin/user/_tabs.html:8
+msgid "Unverified"
+msgstr "Ждут проверки"
+
 #: compat/spirit/spirit/templates/spirit/admin/user/user_edit.html:5
 #: compat/spirit/spirit/templates/spirit/admin/user/user_edit.html:9
 #: compat/spirit/spirit/templates/spirit/user/_profile.html:41
@@ -819,6 +831,12 @@ msgstr "Список пользователя"
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unactive.html:5
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unactive.html:11
 msgid "Unactive Users"
+msgstr "Неактивные пользователи"
+
+#: compat/spirit/spirit/templates/spirit/admin/user/user_unverified.html:5
+#: compat/spirit/spirit/templates/spirit/admin/user/user_unverified.html:11
+#, fuzzy
+msgid "Unverified Users"
 msgstr "Неактивные пользователи"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:5
@@ -1378,7 +1396,7 @@ msgstr ""
 "писем происходит достаточно быстро."
 
 #: compat/spirit/spirit/templates/spirit/user/password_reset_done.html:12
-#: compat/spirit/spirit/views/user.py:107
+#: compat/spirit/spirit/views/user.py:108
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
@@ -1659,27 +1677,27 @@ msgstr "Нельзя отправлять сообщения слишком ча
 msgid "New notification: %(topic_name)s"
 msgstr "Новые уведомления: %(topic_name)s"
 
-#: compat/spirit/spirit/views/user.py:69
+#: compat/spirit/spirit/views/user.py:70
 msgid "We have sent you an email so you can activate your account!"
 msgstr "Мы отправили вам письмо активации! Проверьте почту!"
 
-#: compat/spirit/spirit/views/user.py:90
+#: compat/spirit/spirit/views/user.py:91
 msgid "Your account has been activated!"
 msgstr "Ваш аккаунт активирован!"
 
-#: compat/spirit/spirit/views/user.py:123
+#: compat/spirit/spirit/views/user.py:124
 msgid "Your profile has been updated!"
 msgstr "Ваш профиль изменен!"
 
-#: compat/spirit/spirit/views/user.py:138
+#: compat/spirit/spirit/views/user.py:139
 msgid "Your password has been changed!"
 msgstr "Ваш пароль изменен!"
 
-#: compat/spirit/spirit/views/user.py:153
+#: compat/spirit/spirit/views/user.py:154
 msgid "We have sent you an email so you can confirm the change!"
 msgstr "Мы отправили вам email, чтобы вы могли подтвердить изменения!"
 
-#: compat/spirit/spirit/views/user.py:169
+#: compat/spirit/spirit/views/user.py:170
 msgid "Your email has been changed!"
 msgstr "Ваш email был изменен!"
 
@@ -1695,6 +1713,6 @@ msgstr "Жалобы была отмодерирована!"
 msgid "Settings updated!"
 msgstr "Настройки изменены!"
 
-#: compat/spirit/spirit/views/admin/user.py:25
+#: compat/spirit/spirit/views/admin/user.py:26
 msgid "This profile has been updated!"
 msgstr "Профиль обновлен!"
