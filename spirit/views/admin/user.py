@@ -62,5 +62,5 @@ def user_unactive(request):
 
 @administrator_required
 def user_unverified(request):
-    users = User.objects.filter(is_verified=False)
+    users = User.objects.filter(is_active=True, is_verified=False)
     return render(request, 'spirit/admin/user/user_unverified.html', get_users_context(users))
