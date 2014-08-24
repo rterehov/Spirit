@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-24 11:35+0000\n"
+"POT-Creation-Date: 2014-08-24 11:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruslan Terehov <rterehov@gmail.com>\n"
 "Language-Team: Ruslan Terehov <rterehov@gmail.com>\n"
@@ -826,7 +826,7 @@ msgstr "Редактировать пользователя"
 #: compat/spirit/spirit/templates/spirit/admin/user/user_list.html:5
 #: compat/spirit/spirit/templates/spirit/admin/user/user_list.html:11
 msgid "User list"
-msgstr "Список пользователя"
+msgstr "Список пользователей"
 
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unactive.html:5
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unactive.html:11
@@ -835,9 +835,8 @@ msgstr "Неактивные пользователи"
 
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unverified.html:5
 #: compat/spirit/spirit/templates/spirit/admin/user/user_unverified.html:11
-#, fuzzy
 msgid "Unverified Users"
-msgstr "Неактивные пользователи"
+msgstr "Ждут проверки"
 
 #: compat/spirit/spirit/templates/spirit/comment/_editor.html:5
 msgid "Bold"
@@ -1483,6 +1482,7 @@ msgid "Register"
 msgstr "Зарегистрироваться"
 
 #: compat/spirit/spirit/templates/spirit/user/verification_email.html:2
+#, python-format
 msgid "You're account has been verification at %(site_name)s."
 msgstr "Ваш аккаунт был проверен администратором на сайте %(site_name)s."
 
@@ -1682,7 +1682,6 @@ msgid "Too many submissions, wait %(time)s."
 msgstr "Нельзя отправлять сообщения слишком часто, подождите %(time)s."
 
 #: compat/spirit/spirit/utils/user/email.py:48
-#, fuzzy
 msgid "User verification"
 msgstr "Активация пользователя"
 
