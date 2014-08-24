@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.utils.translation import ugettext as _
 
 from spirit.utils.decorators import administrator_required
+from spirit.utils.user.email import send_verification_email
 
 from spirit.forms.admin import UserEditForm
 
@@ -19,10 +20,13 @@ def user_edit(request, user_id):
     user = get_object_or_404(User, pk=user_id)
 
     if request.method == 'POST':
+        is_verified = user.is_verified and user.is_active
         form = UserEditForm(data=request.POST, instance=user)
 
         if form.is_valid():
             form.save()
+            if not is_verified and user.is_verified and user.is_active:
+                send_verification_email(request, user)
             messages.info(request, _("This profile has been updated!"))
             return redirect(request.GET.get("next", request.get_full_path()))
     else:

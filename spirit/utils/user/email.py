@@ -44,6 +44,13 @@ def send_activation_email(request, user):
     sender(request, subject, template_name, context, [user.email, ])
 
 
+def send_verification_email(request, user):
+    subject = _("User verification")
+    template_name = 'spirit/user/verification_email.html'
+    context = {'user_id': user.pk}
+    sender(request, subject, template_name, context, [user.email, ])
+
+
 def send_email_change_email(request, user, new_email):
     subject = _("Email change")
     template_name = 'spirit/user/email_change_email.html'
