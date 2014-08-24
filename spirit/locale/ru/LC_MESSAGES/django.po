@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-24 11:12+0000\n"
+"POT-Creation-Date: 2014-08-24 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruslan Terehov <rterehov@gmail.com>\n"
 "Language-Team: Ruslan Terehov <rterehov@gmail.com>\n"
@@ -438,7 +438,7 @@ msgstr ""
 
 #: compat/spirit/spirit/models/topic_poll.py:48
 msgid "voter"
-msgstr ""
+msgstr "голосовал"
 
 #: compat/spirit/spirit/models/topic_poll.py:55
 msgid "poll vote"
@@ -470,7 +470,7 @@ msgstr "Откуда вы"
 
 #: compat/spirit/spirit/models/user.py:21
 msgid "last seen"
-msgstr ""
+msgstr "последний заход"
 
 #: compat/spirit/spirit/models/user.py:22
 msgid "last ip"
@@ -1162,7 +1162,7 @@ msgstr "Далее"
 
 #: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:10
 msgid "Vote"
-msgstr ""
+msgstr "Голос"
 
 #: compat/spirit/spirit/templates/spirit/topic_poll/_form.html:14
 msgid "open"
@@ -1286,6 +1286,7 @@ msgstr "Перейдите по ссылке, чтобы активироват�
 #: compat/spirit/spirit/templates/spirit/user/activation_email.html:8
 #: compat/spirit/spirit/templates/spirit/user/email_change_email.html:8
 #: compat/spirit/spirit/templates/spirit/user/password_reset_email.html:9
+#: compat/spirit/spirit/templates/spirit/user/verification_email.html:8
 msgid "Thanks for using our site!"
 msgstr "Спасибо!"
 
@@ -1440,7 +1441,7 @@ msgstr "Пароль изменен для %(site_name)s"
 #: compat/spirit/spirit/templates/spirit/user/profile_email_change.html:9
 #: compat/spirit/spirit/tests/tests_user.py:450
 #: compat/spirit/spirit/tests/tests_utils.py:559
-#: compat/spirit/spirit/utils/user/email.py:48
+#: compat/spirit/spirit/utils/user/email.py:55
 msgid "Email change"
 msgstr "Изменение email"
 
@@ -1480,6 +1481,14 @@ msgstr ""
 #: compat/spirit/spirit/templates/spirit/user/register.html:28
 msgid "Register"
 msgstr "Зарегистрироваться"
+
+#: compat/spirit/spirit/templates/spirit/user/verification_email.html:2
+msgid "You're account has been verification at %(site_name)s."
+msgstr "Ваш аккаунт был проверен администратором на сайте %(site_name)s."
+
+#: compat/spirit/spirit/templates/spirit/user/verification_email.html:4
+msgid "Congratulations!"
+msgstr "Поздравляем!"
 
 #: compat/spirit/spirit/templatetags/tags/comment.py:25
 msgid "This topic has been moved"
@@ -1672,7 +1681,12 @@ msgstr ""
 msgid "Too many submissions, wait %(time)s."
 msgstr "Нельзя отправлять сообщения слишком часто, подождите %(time)s."
 
-#: compat/spirit/spirit/utils/user/email.py:57
+#: compat/spirit/spirit/utils/user/email.py:48
+#, fuzzy
+msgid "User verification"
+msgstr "Активация пользователя"
+
+#: compat/spirit/spirit/utils/user/email.py:64
 #, python-format
 msgid "New notification: %(topic_name)s"
 msgstr "Новые уведомления: %(topic_name)s"
@@ -1713,6 +1727,6 @@ msgstr "Жалобы была отмодерирована!"
 msgid "Settings updated!"
 msgstr "Настройки изменены!"
 
-#: compat/spirit/spirit/views/admin/user.py:26
+#: compat/spirit/spirit/views/admin/user.py:30
 msgid "This profile has been updated!"
 msgstr "Профиль обновлен!"
