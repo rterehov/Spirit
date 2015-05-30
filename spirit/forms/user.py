@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
@@ -106,8 +108,8 @@ class ResendActivationForm(forms.Form):
         except User.DoesNotExist:
             raise forms.ValidationError(_("The provided email does not exists."))
 
-        if self.user.last_ip:
-            raise forms.ValidationError(_("This account was activated."))
+        if self.user.is_verified:
+            raise forms.ValidationError(_("This account is verified, try logging-in."))
 
         return email
 

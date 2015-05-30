@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from . import register
 from spirit.forms.search import BasicSearchForm
@@ -12,6 +14,7 @@ def render_search_form():
 
 @register.assignment_tag()
 def get_topics_from_search_result(results):
+    # TODO: move to view
     # Since Im only indexing Topics this is ok.
     topics = [r.object for r in results]
     return topics

@@ -1,6 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from math import ceil
+from __future__ import unicode_literals
 
 from django.core.paginator import InvalidPage
 from django.conf import settings
@@ -8,12 +8,9 @@ from django.conf import settings
 
 class YTPaginator(object):
     """
-    Paginator for efficiently paginating large object collections on systems
-    where using standard Django pagination is impractical because of significant
-    ``count(*)`` query overhead.
-
     It'll limit the page list to a given limit
     """
+
     def __init__(self, object_list, per_page, allow_empty_first_page=True):
         self.object_list = object_list
         self.per_page = per_page
@@ -34,9 +31,6 @@ class YTPaginator(object):
     def page(self, number):
         """
         Returns a Page object for the given 1-based page number.
-
-        Retrieves objects for the given page number plus 1 additional to check
-        if there are more objects after this page.
         """
         number = self.validate_number(number)
         offset = (number - 1) * self.per_page
@@ -62,6 +56,9 @@ class YTPage(object):
 
     def __repr__(self):
         return '<Page %s>' % self.number
+
+    def __len__(self):
+        return len(self.object_list)
 
     def __getitem__(self, index):
         if not isinstance(self.object_list, list):
@@ -91,7 +88,7 @@ class YTPage(object):
         if not count:
             self._num_pages = 0
         else:
-            offset_pages = int(ceil(count / float(self.paginator.per_page)))
+            offset_pages = (-count // self.paginator.per_page) * -1  # ceil
             self._num_pages = self.number - 1 + offset_pages
 
         return self._num_pages
@@ -115,7 +112,7 @@ class YTPage(object):
         if first_page < 1:
             first_page = 1
 
-        return xrange(first_page, last_page + 1)
+        return range(first_page, last_page + 1)
 
     def next_page_number(self):
         return self.paginator.validate_number(self.number + 1)

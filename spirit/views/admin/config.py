@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -22,4 +24,6 @@ def config_basic(request):
     else:
         form = BasicConfigForm()
 
-    return render(request, 'spirit/admin/config/config_basic.html', {'form': form, })
+    context = {'form': form, }
+
+    return render(request, 'spirit/admin/config/config_basic.html', context)

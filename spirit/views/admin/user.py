@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
@@ -6,6 +8,9 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 
+from djconfig import config
+
+from ...utils.paginator import yt_paginate
 from spirit.utils.decorators import administrator_required
 from spirit.utils.user.email import send_verification_email
 
@@ -32,7 +37,9 @@ def user_edit(request, user_id):
     else:
         form = UserEditForm(instance=user)
 
-    return render(request, 'spirit/admin/user/user_edit.html', {'form': form, })
+    context = {'form': form, }
+
+    return render(request, 'spirit/admin/user/user_edit.html', context)
 
 
 def get_users_context(users):
@@ -43,20 +50,35 @@ def get_users_context(users):
 
 @administrator_required
 def user_list(request):
-    users = User.objects.all()
-    return render(request, 'spirit/admin/user/user_list.html', get_users_context(users))
+    users = yt_paginate(
+        User.objects.all(),
+        per_page=config.topics_per_page,
+        page_number=request.GET.get('page', 1)
+    )
+    context = {'users': users, }
+    return render(request, 'spirit/admin/user/user_list.html', context)
 
 
 @administrator_required
 def user_admins(request):
-    users = User.objects.filter(is_administrator=True)
-    return render(request, 'spirit/admin/user/user_admins.html', get_users_context(users))
+    users = yt_paginate(
+        User.objects.filter(is_administrator=True),
+        per_page=config.topics_per_page,
+        page_number=request.GET.get('page', 1)
+    )
+    context = {'users': users, }
+    return render(request, 'spirit/admin/user/user_admins.html', context)
 
 
 @administrator_required
 def user_mods(request):
-    users = User.objects.filter(is_moderator=True, is_administrator=False)
-    return render(request, 'spirit/admin/user/user_mods.html', get_users_context(users))
+    users = yt_paginate(
+        User.objects.filter(is_moderator=True, is_administrator=False),
+        per_page=config.topics_per_page,
+        page_number=request.GET.get('page', 1)
+    )
+    context = {'users': users, }
+    return render(request, 'spirit/admin/user/user_mods.html', context)
 
 
 @administrator_required
@@ -66,5 +88,10 @@ def user_unactive(request):
 
 @administrator_required
 def user_unverified(request):
-    users = User.objects.filter(is_active=True, is_verified=False)
-    return render(request, 'spirit/admin/user/user_unverified.html', get_users_context(users))
+    users = yt_paginate(
+        User.objects.filter(is_active=False),
+        per_page=config.topics_per_page,
+        page_number=request.GET.get('page', 1)
+    )
+    context = {'users': users, }
+    return render(request, 'spirit/admin/user/user_unactive.html', context)

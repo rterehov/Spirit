@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
@@ -8,7 +10,7 @@ from spirit.models.topic_notification import TopicNotification
 
 class NotificationForm(forms.ModelForm):
 
-    is_active = forms.BooleanField(widget=forms.HiddenInput(), required=False)
+    is_active = forms.BooleanField(widget=forms.HiddenInput(), initial=True, required=False)
 
     class Meta:
         model = TopicNotification

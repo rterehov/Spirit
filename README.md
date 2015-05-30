@@ -8,8 +8,8 @@ To see it in action, please visit [The Spirit Project](http://spirit-project.com
 
 Spirit requires the following software to be installed:
 
-* Python 2.7
-* Django 1.6
+* Python 2.7, 3.3 or 3.4 (recommended)
+* Django 1.7
 * PostgreSQL or MySQL or Oracle Database
 
 ## Dependencies
@@ -24,8 +24,11 @@ The only thing to notice is that Spirit uses its own *AUTH_USER_MODEL*.
 
 If you want to roll your own user app, your user model must inherit from `spirit.models.user.AbstractForumUser`.
 
-If you just want to extend the Spirit user model (adding new fields or methods),
+If you want to extend the Spirit user model (adding new fields or methods),
 your model must inherit from `spirit.models.user.AbstractUser`.
+
+If you just want to integrate Spirit's user profile to your *existing* project
+and you are using the default Django's user model, check out the [Spirit-User-Profile](https://github.com/nitely/Spirit-User-Profile) app.
 
 ## Installing (Advanced)
 
@@ -33,7 +36,7 @@ Check out the [example](https://github.com/nitely/Spirit/tree/master/example) pr
 
 In short:
 
-Add `url(r'^', include('spirit.urls', namespace="spirit", app_name="spirit")),` to your *urls.py*
+Add `url(r'^', include('spirit.urls')),` to your *urls.py*
 
 Add `from spirit.settings import *` to the top of your *settings.py* file,
 otherwise you will have to setup all django's related constants (Installed_apps, Middlewares, Login_url, etc)
@@ -41,8 +44,7 @@ otherwise you will have to setup all django's related constants (Installed_apps,
 Run:
 
     pip install -r requirements.txt
-    python manage.py syncdb
-    python manage.py loaddata spirit_init
+    python manage.py migrate
     python manage.py createcachetable spirit_cache
     python manage.py collectstatic
 
@@ -65,19 +67,28 @@ Visit (http://127.0.0.1:8000/)
 
 ## Updating
 
+> *Upgrading from v0.1.x?* make sure you change `url(r'^', include(urls, namespace="spirit", app_name="spirit")),` to `url(r'^', include('spirit.urls')),` in your *urls.py*.
+> The way settings used to import your local_settings.py has changed, so check that out.
+
 Run:
 
     pip install -r requirements.txt
-    python manage.py syncdb
-    python manage.py loaddata spirit_init
+    python manage.py migrate
     python manage.py collectstatic
-    python manage.py rebuild_index
+    python manage.py rebuild_index --noinput
 
 ## Contributing
 
 Feel free to check out the source code and submit pull requests.
 
 You may also report any bug or propose new features in the [issues tracker](https://github.com/nitely/Spirit/issues)
+
+## Testing
+
+The `runtests.py` script enable you to run the test suite of spirit.
+
+- Type `./runtests.py` to run the test suite using the settings from the `tests` folder.
+- Type `./runtests.py example` to run the test suite using the settings from the `example` folder.
 
 ## Copyright / License
 

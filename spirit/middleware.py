@@ -1,6 +1,7 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-import pytz
+from __future__ import unicode_literals
+
 
 from django.utils import timezone
 from django.contrib.auth import get_user_model
@@ -93,7 +94,7 @@ class PrivateForumMiddleware(object):
             return
 
         # Namespacing /user/ would be better but breaks current urls namespace.
-        url_whitelist = ['user-login',
+        url_whitelist = {'user-login',
                          'user-logout',
                          'user-register',
                          'resend-activation',
@@ -101,7 +102,7 @@ class PrivateForumMiddleware(object):
                          'password-reset',
                          'password-reset-done',
                          'password-reset-confirm',
-                         'password-reset-complete']
+                         'password-reset-complete'}
 
         if resolver_match.url_name in url_whitelist:
             return

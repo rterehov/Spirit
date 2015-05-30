@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django.db.models.fields import SlugField
 from django.utils.text import slugify
@@ -15,6 +17,7 @@ class AutoSlugField(SlugField):
     When populate_from is provided it'll populate itself on creation,
     only if a slug was not provided.
     """
+
     def __init__(self, *args, **kwargs):
         self.populate_from = kwargs.pop('populate_from', None)
         super(AutoSlugField, self).__init__(*args, **kwargs)
@@ -37,5 +40,10 @@ class AutoSlugField(SlugField):
 
         return slug
 
-    # def deconstruct(self):
-        # TODO: django 1.7 requires this
+    def deconstruct(self):
+        name, path, args, kwargs = super(AutoSlugField, self).deconstruct()
+
+        if self.populate_from is not None:
+            kwargs['populate_from'] = self.populate_from
+
+        return name, path, args, kwargs

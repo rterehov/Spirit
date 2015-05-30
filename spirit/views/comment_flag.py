@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -21,4 +23,9 @@ def flag_create(request, comment_id):
     else:
         form = FlagForm()
 
-    return render(request, 'spirit/comment_flag/flag_create.html', {'form': form, 'comment': comment})
+    context = {
+        'form': form,
+        'comment': comment
+    }
+
+    return render(request, 'spirit/comment_flag/flag_create.html', context)

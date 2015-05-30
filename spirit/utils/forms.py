@@ -1,13 +1,16 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django import forms
-from django.utils.html import conditional_escape, mark_safe
 from django.utils.encoding import smart_text
+from django.db.models import Prefetch
 
 
 class NestedModelChoiceField(forms.ModelChoiceField):
     """A ModelChoiceField that groups parents and childrens"""
     # TODO: subclass ModelChoiceIterator, remove _populate_choices()
+
     def __init__(self, related_name, parent_field, label_field, *args, **kwargs):
         """
         @related_name: related_name or "FOO_set"
@@ -25,7 +28,7 @@ class NestedModelChoiceField(forms.ModelChoiceField):
         choices = [("", self.empty_label), ]
         kwargs = {self.parent_field: None, }
         queryset = self.queryset.filter(**kwargs)\
-            .prefetch_related(self.related_name)
+            .prefetch_related(Prefetch(self.related_name, queryset=self.queryset))
 
         for parent in queryset:
             choices.append((self.prepare_value(parent), self.label_from_instance(parent)))
@@ -35,9 +38,9 @@ class NestedModelChoiceField(forms.ModelChoiceField):
         self.choices = choices
 
     def label_from_instance(self, obj):
-        level_indicator = u""
+        level_indicator = ""
 
         if getattr(obj, self.parent_field):
-            level_indicator = u"--- "
+            level_indicator = "--- "
 
-        return mark_safe(level_indicator + conditional_escape(smart_text(getattr(obj, self.label_field))))
+        return "%s%s" % (level_indicator, smart_text(getattr(obj, self.label_field)))

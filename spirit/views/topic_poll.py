@@ -1,8 +1,9 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from django.core.urlresolvers import reverse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.contrib.auth.views import redirect_to_login
@@ -12,6 +13,7 @@ from spirit import utils
 
 from spirit.models.topic_poll import TopicPoll
 from spirit.forms.topic_poll import TopicPollChoiceFormSet, TopicPollForm, TopicPollVoteManyForm
+from spirit.signals.topic_poll import topic_poll_pre_vote, topic_poll_post_vote
 
 
 @login_required
@@ -24,13 +26,18 @@ def poll_update(request, pk):
 
         if form.is_valid() and formset.is_valid():
             poll = form.save()
-            choices = formset.save()
+            formset.save()
             return redirect(request.POST.get('next', poll.get_absolute_url()))
     else:
         form = TopicPollForm(instance=poll)
         formset = TopicPollChoiceFormSet(instance=poll)
 
-    return render(request, 'spirit/topic_poll/poll_update.html', {'form': form, 'formset': formset})
+    context = {
+        'form': form,
+        'formset': formset
+    }
+
+    return render(request, 'spirit/topic_poll/poll_update.html', context)
 
 
 @login_required
@@ -44,11 +51,14 @@ def poll_close(request, pk):
 
         return redirect(request.GET.get('next', poll.get_absolute_url()))
 
-    return render(request, 'spirit/topic_poll/poll_close.html', {'poll': poll, })
+    context = {'poll': poll, }
+
+    return render(request, 'spirit/topic_poll/poll_close.html', context)
 
 
 @require_POST
 def poll_vote(request, pk):
+    # TODO: check if user has access to this topic/poll
     poll = get_object_or_404(TopicPoll, pk=pk)
 
     if not request.user.is_authenticated():
@@ -58,8 +68,10 @@ def poll_vote(request, pk):
     form = TopicPollVoteManyForm(user=request.user, poll=poll, data=request.POST)
 
     if form.is_valid():
+        topic_poll_pre_vote.send(sender=poll.__class__, poll=poll, user=request.user)
         form.save_m2m()
+        topic_poll_post_vote.send(sender=poll.__class__, poll=poll, user=request.user)
         return redirect(request.POST.get('next', poll.get_absolute_url()))
-    else:
-        messages.error(request, utils.render_form_errors(form))
-        return redirect(request.POST.get('next', poll.get_absolute_url()))
+
+    messages.error(request, utils.render_form_errors(form))
+    return redirect(request.POST.get('next', poll.get_absolute_url()))

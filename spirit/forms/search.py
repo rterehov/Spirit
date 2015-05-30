@@ -1,4 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 from django import forms
 from django.conf import settings
@@ -37,7 +39,7 @@ class BasicSearchForm(BaseSearchForm):
 
 class AdvancedSearchForm(BaseSearchForm):
 
-    category = forms.ModelMultipleChoiceField(queryset=Category.objects.for_public(),
+    category = forms.ModelMultipleChoiceField(queryset=Category.objects.visible(),
                                               required=False,
                                               label=_('Filter by'),
                                               widget=forms.CheckboxSelectMultiple)
